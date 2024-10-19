@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ChevronDown, Sun, Moon, Menu, X } from 'lucide-react';
 
 const Navbar = ({ isDarkMode, toggleTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [language, setLanguage] = useState('EN');
   const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
+  const { t, i18n } = useTranslation();
 
   const toggleLanguage = () => {
-    setLanguage(language === 'EN' ? 'ES' : 'EN');
+    const newLang = i18n.language === 'en' ? 'es' : 'en';
+    i18n.changeLanguage(newLang);
     setIsLangDropdownOpen(false);
   };
 
@@ -21,7 +23,7 @@ const Navbar = ({ isDarkMode, toggleTheme }) => {
               onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
               className="flex items-center space-x-1 focus:outline-none"
             >
-              <span>{language}</span>
+              <span>{i18n.language.toUpperCase()}</span>
               <ChevronDown size={16} />
             </button>
             {isLangDropdownOpen && (
@@ -30,7 +32,7 @@ const Navbar = ({ isDarkMode, toggleTheme }) => {
                   onClick={toggleLanguage}
                   className={`block w-full text-left px-4 py-2 ${isDarkMode ? 'hover:bg-[#2a2f34]' : 'hover:bg-gray-200'}`}
                 >
-                  {language === 'EN' ? 'ES' : 'EN'}
+                  {i18n.language === 'en' ? 'ES' : 'EN'}
                 </button>
               </div>
             )}
@@ -38,8 +40,8 @@ const Navbar = ({ isDarkMode, toggleTheme }) => {
         </div>
         
         <div className="hidden md:flex items-center space-x-8 lg:space-x-16 flex-grow justify-center">
-          <h2 className="font-bold">About</h2>
-          <h2 className="font-bold">Mental tools</h2>
+          <h2 className="font-bold">{t('navbar.about')}</h2>
+          <h2 className="font-bold">{t('navbar.mentalTools')}</h2>
         </div>
         
         <div className="flex items-center space-x-4">
@@ -61,8 +63,8 @@ const Navbar = ({ isDarkMode, toggleTheme }) => {
       
       <div className={`container mx-auto mt-2 ${isDarkMode ? 'bg-[#1a1f24]' : 'bg-gray-100'} rounded-md p-4 ${isOpen ? 'block' : 'hidden'} md:hidden`}>
         <div className="flex flex-col space-y-2 items-end pr-4">
-          <h2 className="font-bold">About</h2>
-          <h2 className="font-bold">Mental tools</h2>
+          <h2 className="font-bold">{t('navbar.about')}</h2>
+          <h2 className="font-bold">{t('navbar.mentalTools')}</h2>
         </div>
       </div>
     </nav>
