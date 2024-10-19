@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Sun, Moon } from 'lucide-react';
+import { ChevronDown, Sun, Moon, Menu, X } from 'lucide-react';
 
 const Navbar = ({ isDarkMode, toggleTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,12 +43,6 @@ const Navbar = ({ isDarkMode, toggleTheme }) => {
         </div>
         
         <div className="flex items-center space-x-4">
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="focus:outline-none md:hidden"
-          >
-            {isOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
-          </button>
           <button onClick={toggleTheme} className="focus:outline-none">
             {isDarkMode ? (
               <Sun size={24} className="text-white" />
@@ -56,11 +50,17 @@ const Navbar = ({ isDarkMode, toggleTheme }) => {
               <Moon size={24} className="text-[#111518]" />
             )}
           </button>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="focus:outline-none md:hidden"
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
       </div>
       
       <div className={`container mx-auto mt-2 ${isDarkMode ? 'bg-[#1a1f24]' : 'bg-gray-100'} rounded-md p-4 ${isOpen ? 'block' : 'hidden'} md:hidden`}>
-        <div className="flex flex-col space-y-2">
+        <div className="flex flex-col space-y-2 items-end pr-4">
           <h2 className="font-bold">About</h2>
           <h2 className="font-bold">Mental tools</h2>
         </div>
