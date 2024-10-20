@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ChevronDown, Sun, Moon, Menu, X } from 'lucide-react';
 
-const Navbar = ({ isDarkMode, toggleTheme }) => {
+const Navbar = ({ isDarkMode, toggleTheme, openModal }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
   const { t, i18n } = useTranslation();
@@ -40,8 +40,8 @@ const Navbar = ({ isDarkMode, toggleTheme }) => {
         </div>
         
         <div className="hidden md:flex items-center space-x-8 lg:space-x-16 flex-grow justify-center">
-          <h2 className="font-bold">{t('navbar.about')}</h2>
-          <h2 className="font-bold">{t('navbar.mentalTools')}</h2>
+          <button className="font-bold" onClick={() => openModal('about')}>{t('navbar.about')}</button>
+          <button className="font-bold" onClick={() => openModal('mentalTools')}>{t('navbar.mentalTools')}</button>
         </div>
         
         <div className="flex items-center space-x-4">
@@ -63,8 +63,8 @@ const Navbar = ({ isDarkMode, toggleTheme }) => {
       
       <div className={`container mx-auto mt-2 ${isDarkMode ? 'bg-[#1a1f24]' : 'bg-gray-100'} rounded-md p-4 ${isOpen ? 'block' : 'hidden'} md:hidden`}>
         <div className="flex flex-col space-y-2 items-end pr-4">
-          <h2 className="font-bold">{t('navbar.about')}</h2>
-          <h2 className="font-bold">{t('navbar.mentalTools')}</h2>
+          <button className="font-bold" onClick={() => openModal('about')}>{t('navbar.about')}</button>
+          <button className="font-bold" onClick={() => openModal('mentalTools')}>{t('navbar.mentalTools')}</button>
         </div>
       </div>
     </nav>

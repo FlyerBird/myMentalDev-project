@@ -35,5 +35,13 @@ export default {
   common: {
     startJourney: "Start Your Journey",
     getStarted: "Get Started Now"
+  },
+  about: {
+    title: "About myMentalDev",
+    description: "myMentalDev is a platform dedicated to empowering individuals through accessible mental health and personal development tools. Founded by a professional with experience in both coaching and software engineering, we bridge the gap between personal growth and technology."
+  },
+  mentalTools: {
+    title: "Mental Tools",
+    description: "Explore our collection of mental tools designed to enhance your personal and professional life. From stress management techniques to productivity boosters, our tools are crafted to support your journey towards a more balanced and fulfilling life."
   }
 };

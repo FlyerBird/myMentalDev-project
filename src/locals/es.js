@@ -1,7 +1,7 @@
 export default {
   navbar: {
-    about: "Acerca de",
-    mentalTools: "Herramientas mentales"
+    about: "Sobre el proyecto",
+    mentalTools: "Recursos"
   },
   home: {
     welcome: "Bienvenido a myMentalDev",
@@ -35,5 +35,13 @@ export default {
   common: {
     startJourney: "Comienza Tu Viaje",
     getStarted: "Empieza Ahora"
+  },
+  about: {
+    title: "Sobre myMentalDev",
+    description: "myMentalDev es una plataforma dedicada a empoderar a las personas a través de herramientas accesibles de salud mental y desarrollo personal. Fundada por un profesional con experiencia tanto en coaching como en ingeniería de software, tendemos un puente entre el crecimiento personal y la tecnología."
+  },
+  mentalTools: {
+    title: "Herramientas Mentales",
+    description: "Explora nuestra colección de herramientas mentales diseñadas para mejorar tu vida personal y profesional. Desde técnicas de manejo del estrés hasta impulsores de productividad, nuestras herramientas están elaboradas para apoyar tu viaje hacia una vida más equilibrada y satisfactoria."
   }
 };
