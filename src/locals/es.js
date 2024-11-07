@@ -38,7 +38,20 @@ export default {
   },
   about: {
     title: "Sobre myMentalDev",
-    description: "myMentalDev es una plataforma dedicada a empoderar a las personas a través de herramientas accesibles de salud mental y desarrollo personal. Fundada por un profesional con experiencia tanto en coaching como en ingeniería de software, tendemos un puente entre el crecimiento personal y la tecnología."
+    sections: [
+      {
+        subtitle: "La Misión",
+        description: "myMentalDev tiene como misión empoderar a las personas mediante una plataforma que fusiona coaching personal y tecnología. Ofrece recursos accesibles y fáciles de usar, diseñados para fomentar el bienestar mental y ayudar a los usuarios a alcanzar su máximo potencial."
+      },
+      {
+        subtitle: "Nuestra Historia",
+        description: "MyMentalDev nació de la experiencia única de su fundador como coach personal e Ingeniero QA en la industria tecnológica. Esta fusión de experiencias inspiró la creación de una plataforma donde las técnicas de coaching se encuentran con la innovación tecnológica, haciendo el desarrollo personal accesible para todos, independientemente de su origen."
+      },
+      {
+        subtitle: "Nuestra Historia",
+        description: "MyMentalDev nació de la experiencia única de su fundador como coach personal e Ingeniero QA en la industria tecnológica. Esta fusión de experiencias inspiró la creación de una plataforma donde las técnicas de coaching se encuentran con la innovación tecnológica, haciendo el desarrollo personal accesible para todos, independientemente de su origen."
+      }
+    ]
   },
   mentalTools: {
     title: "Herramientas Mentales",

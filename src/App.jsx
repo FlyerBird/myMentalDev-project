@@ -32,12 +32,24 @@ function App() {
         isDarkMode={isDarkMode}
       >
         {modalContent === 'about' ? (
-          <div>
-            <p>{t('about.description')}</p>
+          <div className="space-y-6">
+            {t('about.sections', { returnObjects: true }).map((section, index) => (
+              <div 
+                key={index} 
+                className={`${index > 0 ? 'pt-6 border-t border-gray-200 dark:border-gray-700' : ''}`}
+              >
+                <h3 className="text-xl font-semibold mb-3">{section.subtitle}</h3>
+                <p className="text-base leading-relaxed text-gray-600 dark:text-gray-300">
+                  {section.description}
+                </p>
+              </div>
+            ))}
           </div>
         ) : modalContent === 'mentalTools' ? (
           <div>
-            <p>{t('mentalTools.description')}</p>
+            <p className="text-base leading-relaxed text-gray-600 dark:text-gray-300">
+              {t('mentalTools.description')}
+            </p>
           </div>
         ) : null}
       </Modal>

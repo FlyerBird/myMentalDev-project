@@ -5,9 +5,11 @@ const Modal = ({ isOpen, onClose, title, children, isDarkMode }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
-      <div className={`w-full max-w-4xl max-h-[90vh] overflow-y-auto ${isDarkMode ? 'bg-[#1a1f24] text-white' : 'bg-white text-[#111518]'} rounded-lg shadow-xl`}>
-        <div className={`sticky top-0 flex justify-between items-center p-4 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>
+    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-start sm:items-center p-4">
+      <div 
+        className={`w-full max-w-4xl ${isDarkMode ? 'bg-[#1a1f24] text-white' : 'bg-white text-[#111518]'} rounded-lg shadow-xl flex flex-col max-h-[90vh]`}
+      >
+        <div className={`flex justify-between items-center p-4 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'} bg-opacity-95 backdrop-blur-sm`}>
           <h2 className="text-2xl font-bold">{title}</h2>
           <button
             onClick={onClose}
@@ -16,7 +18,7 @@ const Modal = ({ isOpen, onClose, title, children, isDarkMode }) => {
             <X size={24} />
           </button>
         </div>
-        <div className="p-4">
+        <div className="p-4 overflow-y-auto">
           {children}
         </div>
       </div>
