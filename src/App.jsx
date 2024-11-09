@@ -39,15 +39,28 @@ function App() {
                 className={`${index > 0 ? 'pt-6 border-t border-gray-200 dark:border-gray-700' : ''}`}
               >
                 <h3 className="text-xl font-semibold mb-3">{section.subtitle}</h3>
-                <p className="text-base leading-relaxed text-gray-600 dark:text-gray-300">
-                  {section.description}
-                </p>
+                {Array.isArray(section.description) ? (
+                  <div className="space-y-4">
+                    {section.description.map((pillar, pillarIndex) => (
+                      <div key={pillarIndex} className={`${section.subtitle === "Pilares del Proyecto" ? 'ml-4' : ''}`}>
+                        <h4 className="font-medium text-lg">{pillar.title}</h4>
+                        <p className={`mt-1 text-base leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-800'}`}>
+                          {pillar.content}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <p className={`text-base leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-800'}`}>
+                    {section.description}
+                  </p>
+                )}
               </div>
             ))}
           </div>
         ) : modalContent === 'mentalTools' ? (
           <div>
-            <p className="text-base leading-relaxed text-gray-600 dark:text-gray-300">
+            <p className={`text-base leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-800'}`}>
               {t('mentalTools.description')}
             </p>
           </div>
