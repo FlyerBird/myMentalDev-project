@@ -38,7 +38,60 @@ export default {
   },
   about: {
     title: "About myMentalDev",
-    description: "myMentalDev is a platform dedicated to empowering individuals through accessible mental health and personal development tools. Founded by a professional with experience in both coaching and software engineering, we bridge the gap between personal growth and technology."
+    sections: [
+      {
+        subtitle: "The Mission",
+        description: "myMentalDev's mission is to empower individuals through a platform that merges personal coaching and technology. It offers accessible and user-friendly resources designed to promote mental well-being and help users reach their full potential."
+      },
+      {
+        subtitle: "The Origin",
+        description: "myMentalDev emerged from its founder's experience as a personal coach, working with a wide diversity of people, from individuals to athletes. Through these experiences, he identified the need to make coaching techniques more accessible and effective for everyone. Driven by his passion for technology and personal development, he decided to direct his career towards the tech sector with the goal of improving user experience and making personal growth accessible to more people."
+      },
+      {
+        subtitle: "The Synergy between Coaching and Technology",
+        description: "From his position as a QA engineer and web developer, myMentalDev's founder has managed to combine his two great passions: coaching and technology. This platform represents that convergence, acting as a bridge between powerful coaching techniques and the accessibility offered by modern technology."
+      },
+      {
+        subtitle: "Addressing a Social Need",
+        description: "The project also responds to a growing concern for mental well-being in society. Given the increase in cases of anxiety and depression, myMentalDev presents itself as an accessible and effective tool to support personal growth and prevent discomfort. It's important to note that myMentalDev does not replace professional medical care. For situations requiring clinical intervention, it is recommended to seek a qualified mental health professional."
+      },
+      {
+        subtitle: "Project Pillars",
+        description: [
+          {
+            title: "Universal Accessibility",
+            content: "Breaking down geographical and economic barriers to offer personal development tools to anyone, anywhere."
+          },
+          {
+            title: "Design Simplicity",
+            content: "Intuitive interfaces that eliminate complexity, making personal growth more accessible and less intimidating."
+          },
+          {
+            title: "User-Centered Technology",
+            content: "A fluid experience that turns personal development into an engaging and motivating journey."
+          },
+          {
+            title: "Individual Empowerment",
+            content: "Equipping users with tools and knowledge that enhance their mental well-being and personal growth."
+          },
+          {
+            title: "Support Community",
+            content: "Promoting a safe space where individuals committed to their development can support each other."
+          }
+        ]
+      },
+      {
+        subtitle: "Future Vision",
+        description: [
+          {
+            content: "myMentalDev envisions a future where every person has accessible tools to care for their mental well-being and develop their maximum potential. By merging the best of coaching with technology, this platform aims to be a driver of positive change, supporting the creation of a stronger and more self-confident society."
+          },
+          {
+            content: "Join the personal growth movement and discover how the synergy between coaching and technology can transform your life."
+          }
+        ]
+      }
+    ]
   },
   mentalTools: {
     title: "Mental Tools",
